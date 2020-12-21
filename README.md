@@ -3,10 +3,13 @@
 <pre>
  <code>
   <img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01.jpg"  height="330" width="495">
+ </code>
+</pre>
+<pre>
+ <code>
   <img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg"  height="330" width="495">
  </code>
 </pre>
-
 
 ## 使用：
 ### step1
