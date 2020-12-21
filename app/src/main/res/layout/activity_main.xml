@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
-    <com.toune.dltools.view.DLVerifyCodeInputView
-        android:id="@+id/inputView"
+<com.toune.verifycodeinputview.DLVerifyCodeInputView
+    android:id="@+id/dlVerifyCodeInputView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:inputStyle="line"
+    app:textColor="#00ff00"
+    app:textSize="13sp"
+    app:lineWidth="10dp"
+    app:lineHeight="3dp"
+    app:lineSelectColor="@color/design_default_color_primary_variant"
+    app:lineDefColor="@color/design_default_color_secondary_variant"
+    app:lineVerPadding="15dp"
+    app:lineHorPadding="15dp"
+    app:num="6"/>
+
+    <com.toune.verifycodeinputview.DLVerifyCodeInputView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_20"
-        app:lineSelectColor="@color/red"
-        app:lineHorPadding="25dp"
-        app:lineHeight="@dimen/dp_2"
+        android:layout_marginTop="10dp"
         app:inputStyle="box"
+        app:boxLineWidth="3dp"
+        app:textColor="#ff0000"
+        app:textSize="13sp"
+        app:boxLineColor="@color/black"
         app:num="6"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

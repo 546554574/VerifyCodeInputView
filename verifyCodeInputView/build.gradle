@@ -38,7 +38,7 @@ publish {
     repoName='toune'
     groupId = 'cn.toune'
     artifactId = 'verifyCodeInputView'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'One line of code turns on the elasticity dialog'
     website = 'https://github.com/546554574/VerifyCodeInputView'
 }

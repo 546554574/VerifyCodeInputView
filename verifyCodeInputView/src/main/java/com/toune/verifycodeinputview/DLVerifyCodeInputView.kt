@@ -261,9 +261,8 @@ class DLVerifyCodeInputView : LinearLayout {
         if (lineWidth > 0) {
             layoutParams.width = lineWidth.toInt()
         }
-        v.setBackgroundColor(lineDefColor)
         v.layoutParams = layoutParams
-        v.setBackgroundColor(boxLineColor)
+        v.setBackgroundColor(lineDefColor)
         lineViews.add(v)
         return v
     }
