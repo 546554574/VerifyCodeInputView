@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <com.toune.dltools.view.DLVerifyCodeInputView
+        android:id="@+id/inputView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/dp_20"
+        app:lineSelectColor="@color/red"
+        app:lineHorPadding="25dp"
+        app:lineHeight="@dimen/dp_2"
+        app:inputStyle="box"
+        app:num="6"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
