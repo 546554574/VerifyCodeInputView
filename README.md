@@ -3,14 +3,9 @@
 <pre>
  <code>
   <img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01.jpg"  height="330" width="495">
-<img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg"  height="330" width="495">
+  <img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg"  height="330" width="495">
  </code>
 </pre>
-
-
-//![图1](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01.jpg =100*200)
-//![图2](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg)
-
 
 
 ## 使用：
