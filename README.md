@@ -1,8 +1,8 @@
 "# VerifyCodeInputView" 
 ## 验证码的输入组件，包含盒子样式和下划线样式，属性可自定义！话不多说，上图
 
-//![图1](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01.jpg){:width="100px" height="200px"}
-//![图2](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg){}
+//![图1](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01.jpg =100*200)
+//![图2](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg)
 <img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01.jpg"  height="330" width="495">
 <img src="https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img02.jpg"  height="330" width="495">
 使用：
