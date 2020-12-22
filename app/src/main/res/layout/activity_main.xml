@@ -29,9 +29,9 @@
         android:layout_marginTop="10dp"
         app:inputStyle="box"
         app:replaceStr="?"
+        app:isHide = "true"
         app:boxLineWidth="3dp"
         app:textColor="#ff0000"
-        app:isHide = "true"
         app:textSize="13sp"
         app:boxLineColor="@color/black"
         app:num="6"/>
