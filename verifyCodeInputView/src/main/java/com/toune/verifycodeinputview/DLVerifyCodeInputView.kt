@@ -2,12 +2,14 @@ package com.toune.verifycodeinputview
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Rect
 import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.text.Editable
 import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
 import android.text.TextWatcher
+import android.text.method.TransformationMethod
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.KeyEvent
@@ -50,6 +52,9 @@ class DLVerifyCodeInputView : LinearLayout {
     var lineDefColor = Color.parseColor("#E0E0E0")  //line默认的颜色
     var lineVerPadding = 3f //line样式文字和横线的间距
     var lineHorPadding = 15f    //line样式两个横线的间距
+
+    var isHide = false //比如输入密码，需要隐藏
+    var replaceStr: String? = null  //隐藏输入的密码的替代字符，默认是·
     private fun readAttr(context: Context, attr: AttributeSet) {
         val obtainStyledAttributes = context.obtainStyledAttributes(attr, R.styleable.verify_code)
         inputStyle =
@@ -77,6 +82,8 @@ class DLVerifyCodeInputView : LinearLayout {
             R.styleable.verify_code_lineHorPadding,
             lineHorPadding
         )
+        isHide = obtainStyledAttributes.getBoolean(R.styleable.verify_code_isHide, false)
+        replaceStr = obtainStyledAttributes.getString(R.styleable.verify_code_replaceStr)
         obtainStyledAttributes.recycle()
     }
 
@@ -135,9 +142,9 @@ class DLVerifyCodeInputView : LinearLayout {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    if (inputStyle==inputStyleLine){
+                    if (inputStyle == inputStyleLine) {
                         //横线的时候修改lineView的颜色
-                        setLineColor(index,count)
+                        setLineColor(index, count)
                     }
                     editTextChangedListener(index, s, count)
                 }
@@ -150,9 +157,9 @@ class DLVerifyCodeInputView : LinearLayout {
     }
 
     private fun setLineColor(index: Int, count: Int) {
-        if(count>0) {
+        if (count > 0) {
             lineViews[index].setBackgroundColor(lineSelectColor)
-        }else{
+        } else {
             lineViews[index].setBackgroundColor(lineDefColor)
         }
     }
@@ -196,6 +203,27 @@ class DLVerifyCodeInputView : LinearLayout {
         editText.filters = arrayOf<InputFilter>(LengthFilter(1))//设置文字长度为1
         editText.setBackgroundColor(Color.TRANSPARENT)//背景透明
         editText.inputType = EditorInfo.TYPE_CLASS_NUMBER//输入数字
+
+        if (isHide) {
+            editText.transformationMethod = object : TransformationMethod {
+                override fun getTransformation(source: CharSequence?, view: View?): CharSequence {
+                    if (replaceStr.isNullOrEmpty()) {
+                        replaceStr = "●"
+                    }
+                    return replaceStr!!
+                }
+
+                override fun onFocusChanged(
+                    view: View?,
+                    sourceText: CharSequence?,
+                    focused: Boolean,
+                    direction: Int,
+                    previouslyFocusedRect: Rect?
+                ) {
+                }
+
+            }
+        }
         editList.add(editText)
         addView(editText)
         if (pos <= inputNum - 1) {
@@ -224,7 +252,7 @@ class DLVerifyCodeInputView : LinearLayout {
         linearLayout.gravity = Gravity.CENTER
         val parentLayoutParams = LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
         if (pos <= inputNum - 1) {
-            parentLayoutParams.setMargins(0,0,lineHorPadding.toInt(),0)
+            parentLayoutParams.setMargins(0, 0, lineHorPadding.toInt(), 0)
         }
         linearLayout.layoutParams = parentLayoutParams
         linearLayout.orientation = VERTICAL
@@ -242,6 +270,26 @@ class DLVerifyCodeInputView : LinearLayout {
         editText.filters = arrayOf<InputFilter>(LengthFilter(1))//设置文字长度为1
         editText.setBackgroundColor(Color.TRANSPARENT)//背景透明
         editText.inputType = EditorInfo.TYPE_CLASS_NUMBER//输入数字
+        if (isHide) {
+            editText.transformationMethod = object : TransformationMethod {
+                override fun getTransformation(source: CharSequence?, view: View?): CharSequence {
+                    if (replaceStr.isNullOrEmpty()) {
+                        replaceStr = "●"
+                    }
+                    return replaceStr!!
+                }
+
+                override fun onFocusChanged(
+                    view: View?,
+                    sourceText: CharSequence?,
+                    focused: Boolean,
+                    direction: Int,
+                    previouslyFocusedRect: Rect?
+                ) {
+                }
+
+            }
+        }
         editList.add(editText)
         linearLayout.addView(editText)
 
@@ -254,7 +302,7 @@ class DLVerifyCodeInputView : LinearLayout {
      * line样式下的底线
      * @return View?
      */
-    val lineViews:MutableList<View> = ArrayList()
+    val lineViews: MutableList<View> = ArrayList()
     private fun createHorLineTv(): View? {
         var v = View(context)
         var layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, lineHeight.toInt())

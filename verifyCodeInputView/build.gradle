@@ -12,7 +12,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -38,7 +38,7 @@ publish {
     repoName='toune'
     groupId = 'cn.toune'
     artifactId = 'verifyCodeInputView'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'One line of code turns on the elasticity dialog'
     website = 'https://github.com/546554574/VerifyCodeInputView'
 }

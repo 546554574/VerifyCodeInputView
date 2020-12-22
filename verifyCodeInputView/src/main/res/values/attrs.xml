@@ -16,5 +16,7 @@
         <attr name="lineDefColor" format="color"/>
         <attr name="lineVerPadding" format="dimension"/>
         <attr name="lineHorPadding" format="dimension"/>
+        <attr name="isHide" format="boolean"/>
+        <attr name="replaceStr" format="string"/>
     </declare-styleable>
 </resources>

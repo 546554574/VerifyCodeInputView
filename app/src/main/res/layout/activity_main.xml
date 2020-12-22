@@ -9,14 +9,13 @@
 
 
 <com.toune.verifycodeinputview.DLVerifyCodeInputView
-    android:id="@+id/dlVerifyCodeInputView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:inputStyle="line"
     app:textColor="#00ff00"
     app:textSize="13sp"
-    app:lineWidth="10dp"
     app:lineHeight="3dp"
+    app:isHide = "true"
     app:lineSelectColor="@color/design_default_color_primary_variant"
     app:lineDefColor="@color/design_default_color_secondary_variant"
     app:lineVerPadding="15dp"
@@ -24,12 +23,15 @@
     app:num="6"/>
 
     <com.toune.verifycodeinputview.DLVerifyCodeInputView
+        android:id="@+id/dlVerifyCodeInputView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:inputStyle="box"
+        app:replaceStr="?"
         app:boxLineWidth="3dp"
         app:textColor="#ff0000"
+        app:isHide = "true"
         app:textSize="13sp"
         app:boxLineColor="@color/black"
         app:num="6"/>
