@@ -15,7 +15,7 @@
 ### step1
 
 ```
- implementation 'cn.toune:verifyCodeInputView:1.0.0'
+ implementation 'cn.toune:verifyCodeInputView:1.0.2'
 ```
 
 ### step2
@@ -47,6 +47,9 @@
         app:textSize="13sp" //文本大小
         app:boxLineColor="@color/black" //线的颜色
         app:num="6" //输入框数量
+       
+        app:replaceStr="?"  //替代显示字符
+        app:isHide = "true" //设置替代字符显示（比如密码输入）
         />
 
 ```
@@ -62,5 +65,8 @@
         }
 ```
 
-### 说明：
+### 版本更新说明：
+1.0.2 ：新增替代字符展示，用于输入密码
+
+
 觉得好用麻烦star
