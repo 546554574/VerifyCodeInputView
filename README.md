@@ -1,4 +1,6 @@
 ## 验证码、密码 输入组件，包含盒子样式和下划线样式，属性可自定义！话不多说，上图
+[![](https://jitpack.io/v/546554574/VerifyCodeInputView.svg)](https://jitpack.io/#546554574/VerifyCodeInputView)
+
 ![图1](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01%20(1).jpg)
 ![图2](https://raw.githubusercontent.com/546554574/VerifyCodeInputView/main/img/img01%20(2).jpg)
 
@@ -7,7 +9,7 @@
 ### step1
 
 ```
- implementation 'cn.toune:verifyCodeInputView:1.0.2'
+implementation 'com.github.546554574:VerifyCodeInputView:1.0.3'
 ```
 
 ### step2
